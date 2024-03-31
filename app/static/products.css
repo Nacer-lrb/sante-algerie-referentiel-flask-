@@ -1,0 +1,223 @@
+/* Base styling */
+body {
+    font-family: 'Arial', sans-serif; /* Example font, replace with your choice */
+    background-color:#eae7e7;; /* Light grey background */
+}
+
+/* Styling for the product header */
+.product-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333; /* A deep gray for contrast */
+    text-align: center;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    margin-bottom: 30px; /* Space before the search bar */
+}
+
+/* Styling for the search container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-container input[type="text"] {
+    height: 50px;
+    width: 60%; /* Slightly reduced width for padding */
+    padding: 0 15px;
+    font-size: 18px; /* Larger font size for readability */
+    border: 2px solid #ddd; /* Subtle border */
+    border-radius: 25px 0 0 25px; /* Rounded left edges */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inner shadow for an inset effect */
+}
+
+.search-container button {
+    height: 54px; /* Slightly larger to cover the border of the input */
+    width: 80px; /* Larger button for a more clickable area */
+    background: linear-gradient(45deg, #e0f2f1, #99e7f8); /* Gradient button background */
+    border: none;
+    border-radius: 0 25px 25px 0; /* Rounded right edges */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Shadow for the button for a 'lifted' effect */
+    transition: background 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.search-container button:hover {
+    background: linear-gradient(45deg,  #99e7f8, #e0f2f1); /* Adjust gradient for hover state */
+}
+
+.search-container button i.fa-search {
+    color: white;
+    font-size: 20px; /* Larger icon */
+}
+
+/* Add some hover effects for the input */
+.search-container input[type="text"]:hover,
+.search-container input[type="text"]:focus {
+    border-color: #ccc; /* Darken the border slightly on hover/focus */
+    outline: none; /* Remove the default focus outline */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .search-container input[type="text"],
+    .search-container button {
+        width: 100%; /* Full width for smaller devices */
+        border-radius: 25px; /* Rounded edges for both elements */
+    }
+
+    .search-container {
+        flex-direction: column; /* Stack the elements on small screens */
+    }
+
+    .search-container button {
+        margin-top: 10px; /* Add space between input and button on small screens */
+    }
+}
+
+
+
+
+
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .product-card {
+    width: 250px; /* Adjust the width as needed */
+    border: 1px solid #ddd; /* Light grey border */
+    margin: 10px;
+    text-align: center;
+    background-color: #fff; /* White background */
+    border-radius: 20%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* Indique que la carte est cliquable */
+    transition: all 0.3s ease; /* Transition pour les effets de survol */
+  }
+  .product-card:hover {
+    transform: translateY(-5px); /* Déplace légèrement la carte vers le haut pour l'effet de soulèvement */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Ombre portée plus marquée */
+    background-color: #f8f8f8; /* Couleur de fond légèrement différente */
+  }
+  .product-image {
+    width: 200px; /* ou la largeur souhaitée */
+    height: 200px; /* ou la hauteur souhaitée */
+    object-fit: cover; /* Cela permet de couvrir la zone définie sans déformer l'image */
+    border-radius: 30px; /* Si vous voulez des coins arrondis */
+  }
+  .product-name {
+    font-weight: bold;
+    padding: 5px 0;
+  }
+  
+  .product-info {
+    font-size: 0.9em; /* Smaller font size for nutritional info */
+    border-top: 1px solid #ddd; /* Separator line */
+    padding: 10px;
+  }
+  
+  .product-info div {
+    margin-bottom: 5px; /* Space out the nutritional info */
+  }
+  
+  .product-scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .nutri-score, .nova-score, .eco-score {
+    display: inline-block;
+    width: 40px; /* Fixed width for score labels */
+    height: 40px; /* Fixed height for score labels */
+    line-height: 40px; /* Center text vertically */
+    margin: 0 5px;
+    color: #fff; /* White text */
+    font-weight: bold;
+    border-radius: 50%; /* Circular badges */
+  }
+  
+  .nutri-score { background-color: #4CAF50; } /* Example green color */
+  .nova-score { background-color: #FFC107; } /* Example yellow color */
+  .eco-score { background-color: #2196F3; } /* Example blue color */
+
+  product-name, .product-scores, .product-details {
+    /* Votre CSS existant pour .product-name, .product-scores */
+    padding: 5px;
+    text-align: center;
+}
+
+.product-details {
+    display: none; /* Les détails sont cachés par défaut */
+    text-align: left; /* Alignement du texte pour les détails */
+}
+
+
+
+/* Style pour le fond de la modale */
+.modal-background {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Reste en place lors du défilement */
+    z-index: 100; /* S'assure que la modale est au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largeur totale */
+    height: 100%; /* Hauteur totale */
+    overflow: auto; /* Permet de scroller si nécessaire */
+    background-color: rgba(0,0,0,0.4); /* Noir avec opacité */
+}
+
+/* Style pour le contenu de la modale */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% du haut et centré horizontalement */
+    padding: 20px;
+    border-radius: 8px; /* Coins arrondis pour la modale */
+    border: 1px solid #888;
+    width: 50%; /* Largeur de la modale */
+    max-width: 600px; /* Maximum width */
+}
+
+/* Bouton pour fermer la modale */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style pour l'image à gauche et le contenu à droite dans la modale */
+.modal-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.modal-image-container {
+    flex-basis: 40%; /* Espace alloué à l'image */
+    margin-right: 20px; /* Espace entre l'image et le texte */
+}
+
+.modal-image-container img {
+    width: 100%; /* L'image remplit l'espace alloué */
+    height: auto; /* Pour maintenir l'aspect ratio */
+    border-radius: 4px; /* Coins arrondis pour l'image */
+}
+
+.modal-text-container {
+    flex-basis: 60%; /* Espace alloué au texte */
+}
+
+

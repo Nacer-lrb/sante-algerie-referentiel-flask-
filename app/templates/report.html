@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-report">
+    <form method="POST" action="{{ url_for('auth.report') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.product_name.label(class='form-label') }}
+            {{ form.product_name(class='form-control') }}
+            {% if form.product_name.errors %}
+                <div class="alert alert-danger">{{ form.product_name.errors[0] }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.barcode.label(class='form-label') }}
+            {{ form.barcode(class='form-control') }}
+            {% if form.barcode.errors %}
+                <div class="alert alert-danger">{{ form.barcode.errors[0] }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.description.label(class='form-label') }}
+            {{ form.description(class='form-control') }}
+            {% if form.description.errors %}
+                <div class="alert alert-danger">{{ form.description.errors[0] }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class='my-submit-class') }}
+        </div>
+    </form>
+</div>
+{% endblock %}

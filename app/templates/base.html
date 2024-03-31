@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUTRI-DZ</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='products.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='report.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='logo2.png') }}" alt="NutriDZ" />
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Accueil</a>
+            <a href="{{ url_for('product.product_list') }}">Produits</a>
+
+            <a href="{{ url_for('auth.alerts') }}">Alertes</a>
+            <a href="{{ url_for('auth.report') }}">Signaler</a>
+        </div>
+      
+        <div class="user-links">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                {% if current_user.is_admin %}
+                    <a href="{{ url_for('admin.dashboard') }}">Administrateur</a>
+                {% endif %}
+            {% else %}
+                <a href="{{ url_for('auth.login') }}"><i class="fa fa-sign-in"></i> Connexion</a>
+                <a href="{{ url_for('auth.register') }}"><i class="fa fa-user-plus"></i> Inscription</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Contenu spécifique à chaque page -->
+    {% block content %}
+    {% for message in get_flashed_messages() %}
+    <div class="flash-message">{{ message }}</div>
+{% endfor %}
+{% endblock %}
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>À propos de NutriDZ</h4>
+            <p>NutriDZ est votre source d'informations nutritionnelles, dédiée à fournir des connaissances essentielles sur les produits alimentaires pour une vie saine en Algérie.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#home">Accueil</a></li>
+              <li><a href="#products">Produits</a></li>
+              <li><a href="#alerts">Alertes</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contactez-nous</h4>
+            <p>Email: contact@nutridz.dz</p>
+            <p>Téléphone: +213 21 123 456</p>
+          </div>
+          <div class="footer-section">
+            <h4>Suivez-nous</h4>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 NutriDZ - Tous droits réservés</p>
+        </div>
+      </footer>
+</body>
+</html>

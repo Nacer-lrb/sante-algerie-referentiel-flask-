@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='inscription.css')}}"> <!-- Assurez-vous que le nom du fichier correspond à votre fichier CSS existant -->
+</head>
+<body>
+    <div class="container">
+        <h2>Inscription</h2>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <form action="{{ url_for('auth.register') }}" method="POST">
+            {{ form.csrf_token }}
+            <label for="username">Nom d'utilisateur:</label>
+            {{ form.username }}
+            
+            <label for="email">Adresse email:</label>
+            {{ form.email }}
+            
+            <label for="password">Mot de passe:</label>
+            {{ form.password }}
+            
+            <label for="confirm_password">Confirmez le mot de passe:</label>
+            {{ form.confirm_password }}
+            
+            {{ form.submit }}
+
+           
+        </form>
+
+        <p class="register-paragraph">
+            Déjà inscrit? <a class="register-link" href="{{ url_for('auth.login') }}">Connectez-vous ici</a>.
+        </p>
+     
+    </div>
+</body>
+</html>

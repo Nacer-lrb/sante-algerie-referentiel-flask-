@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Contenu spécifique à cette page -->
+    <div class="main-content">
+        <!-- Content -->
+        <h1>NutriDZ est votre source<br> d'informations nutritionnelles</h1>
+        <button class="btn" onclick="window.location.href='{{ url_for('product.product_list') }}';">Explorer</button>
+
+    </div>
+
+    <div class="introduction-section">
+        <div class="container">
+            <h1>Bienvenue sur NutriDZ</h1>
+            <p>Votre partenaire de confiance pour des informations nutritionnelles fiables et à jour. Nous sommes dédiés à fournir des données précises et accessibles pour soutenir la santé publique en Algérie.</p>
+            <p>Notre mission est de servir comme une ressource incontournable pour la direction de la santé publique algérienne. En exploitant notre vaste base de données, nous visons à fournir des connaissances et des insights précieux pour assister dans les cas d'intoxication alimentaire, les épidémies, les études d'impact sur la santé et bien plus encore.</p>
+        </div>
+
+
+       <!-- Features Section -->
+       <div class="features-section">
+        <div class="container-features">
+            <div class="feature">
+                <img src="{{ url_for('static', filename='recherche.png') }}" alt="Product Search" class="feature-image">
+                <h3>Recherche de Produits</h3>
+                <p>Explorez notre base de données étendue pour rechercher des informations nutritionnelles...</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='nutri.png') }}" alt="Nutritional Information" class="feature-image">
+                <h3>Informations Nutritionnelles</h3>
+                <p>Accédez à des détails complets sur les produits, y compris le Nutri-Score...</p>
+            </div>
+            <div class="feature">
+                <img src="{{ url_for('static', filename='alerte.png') }}" alt="Food Alerts" class="feature-image">
+                <h3>Alertes Alimentaires</h3>
+                <p>Restez informé des dernières alertes alimentaires concernant des allergènes spécifiques...</p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

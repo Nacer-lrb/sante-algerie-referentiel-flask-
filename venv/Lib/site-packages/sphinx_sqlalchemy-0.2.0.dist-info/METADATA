@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: sphinx_sqlalchemy
+Version: 0.2.0
+Summary: Sphinx extension for documenting SQLAlchemy ORMs
+Keywords: sphinx,extension
+Author-email: Chris Sewell <chrisj_sewell@hotmail.com>
+Requires-Python: ~=3.8
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Sphinx :: Extension
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: sphinx>=5,<8
+Requires-Dist: sqlalchemy~=2.0
+Requires-Dist: pytest ; extra == "dev"
+Requires-Dist: pytest-cov ; extra == "dev"
+Requires-Dist: sphinx-pytest ; extra == "dev"
+Requires-Dist: syrupy~=4.0 ; extra == "dev"
+Requires-Dist: furo ; extra == "docs"
+Project-URL: Documentation, https://sphinx-sqlalchemy.readthedocs.io
+Project-URL: Homepage, http://github.com/chrisjsewell/sphinx-sqlalchemy
+Provides-Extra: dev
+Provides-Extra: docs
+
+# sphinx-sqlalchemy
+
+[![PyPI][pypi-badge]][pypi-link]
+
+Sphinx extension for documenting SQLAlchemy ORMs
+
+[pypi-badge]: https://img.shields.io/pypi/v/sphinx-sqlalchemy.svg
+[pypi-link]: https://pypi.org/project/sphinx-sqlalchemy
+

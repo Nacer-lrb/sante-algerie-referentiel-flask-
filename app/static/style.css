@@ -1,0 +1,294 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f2d9; /* Changed to pure white for a clean look */
+  padding-top: 60px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #e0f2f1; /* Light grey color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  padding: 10px 20px;
+  color: #a5c3a2; /* Dark grey color for text */
+  position: fixed; /* Fixed position to stay in place during scroll */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  z-index: 1000; /* Ensure navbar stays on top of other content */
+}
+
+
+
+
+.logo img {
+  width: 50px; /* Adjust size as needed */
+  background-color: #e5e5e5 ;
+}
+
+.nav-links a, .user-links a {
+  color: #5c5c5c; /* Dark grey color for text */
+  text-decoration: none;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: bold; /* Make the font bold */
+}
+
+.nav-links a:hover, .user-links a:hover {
+  color: #000000; /* Black for hover effect */
+  text-decoration: none; /* Removing underline on hover */
+  background-color: #e5e5e5; /* Light grey background on hover */
+}
+
+search-container {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff; /* White background for the search bar */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 5px;
+}
+
+.search-container input[type="text"] {
+  border: none;
+  margin-right: 5px;
+  padding: 5px;
+  width: 200px; /* Adjust width as needed */
+}
+
+.search-container button {
+  background-color: #f2f2f2; /* Light grey background for the button */
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.search-container button:hover {
+  background-color: #e0e0e0; /* Slightly darker grey on hover */
+}
+
+.main-content {
+
+  text-align: center;
+  padding: 50px;
+  background: url('image/back2.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh; /* Make sure it covers the full viewport height */
+}
+
+.btn {
+  background-color:   #e0f2f1;/* Teal color for buttons */
+  color: #373737;
+  padding: 0.6em 1.2em;
+  text-decoration: none;
+  border: none;
+  position: relative; 
+  font-family: 'Helvetica Neue';
+  top: 150px;
+  cursor: pointer;
+  border-radius: 10px; /* Rounded corners for the button */
+  transition: background-color 0.3s;
+  font-size: 1em;
+}
+/* Add your background image adjustments here if needed to match the uploaded image */
+
+.main-content h1 {
+  color:#000000; /* Black for headings */
+  margin-bottom: 0.5em; /* Adjust space below heading */
+  font-size: 1em; /* Increase the font size */
+  position: relative; 
+  font-family: 'Helvetica Neue';
+  /* Position relative to its normal position */
+  top: 150px; /* Adjust this value to match the uploaded image position */
+  z-index: 2; /* Ensure it's above the background */
+}
+
+
+
+/* Add any other CSS changes required for the background or other elements */
+
+
+.btn:hover {
+  color: #000000;
+  background-color: #00796b; /* Darker teal for hover effect */
+}
+
+
+/* Responsive design for navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* Center items in mobile view */
+  }
+
+  .nav-links, .user-links {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px; /* Added padding for spacing */
+  }
+
+  .nav-links a, .user-links a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5; /* Borders between links */
+  }
+  
+  .logo img {
+    margin-bottom: 10px; /* Space below logo */
+  }
+}
+
+
+.introduction-section {
+  background-color: #f4f4f4;  /* Un fond gris clair, par exemple */
+  padding: 20px;
+  text-align: center;
+}
+
+.introduction-section .container {
+  max-width: 800px; /* ou toute autre largeur préférée */
+  margin: auto;
+  padding: 20px;
+}
+
+.introduction-section h1 {
+  color: #333; /* Une couleur de texte sombre */
+}
+
+.introduction-section p {
+  color: #555; /* Une couleur de texte légèrement plus claire */
+}
+
+
+
+
+.flash-message {
+  background-color: yellow;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+.features-section {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container-features {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px; /* Modifier la largeur maximale selon vos besoins */
+  margin: 0 auto; /* Centrer le conteneur horizontalement */
+}
+
+.feature {
+  flex: 0 1 30%; /* Ajuster la largeur des cartes */
+  margin: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+  transform: scale(1.1);
+}
+
+/* Styling for headings and paragraphs inside the feature */
+.feature h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.feature p {
+  font-size: 1em;
+  color: #555;
+}
+
+
+
+
+
+.site-footer {
+  background-color: #e0f2f1; /* Soft green color */
+  color: #333;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+}
+
+.footer-section ul,
+.footer-section p {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 10px; /* Space between social icons */
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-icon img {
+  width: 24px; /* Adjust icon size as needed */
+  height: auto;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}

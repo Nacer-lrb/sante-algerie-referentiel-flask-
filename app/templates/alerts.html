@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<!-- Affichez les signalements ici -->
+{% for alert in alerts %}
+    <div class="alert">
+        <h3>{{ alert.product_name }}</h3>
+        <img src="{{ alert.product.image_url }}" alt="{{ alert.product_name }}"> <!-- Affichez la photo du produit -->
+        <p>{{ alert.description }}</p>
+        <p>Signalé par: {{ alert.user.username }}</p> <!-- Affichez le nom de l'utilisateur -->
+    </div>
+{% endfor %}
+
+
+{% endblock %}

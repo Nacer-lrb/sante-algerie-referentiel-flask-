@@ -1,0 +1,93 @@
+/* Réinitialisation des marges pour le corps de la page */
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url('image/login.png'); /* Assurez-vous que le chemin de l'image est correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Conteneur principal pour centrer le formulaire avec flou */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    backdrop-filter: blur(6px); /* Flou appliqué à l'arrière-plan */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555; /* Couleur de texte plus douce */
+    font-weight: bold;
+}
+/* Style pour les champs de saisie */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdcdc; /* Bordure plus claire */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* Style pour le titre "Inscription" */
+h2 {
+    margin-bottom: 20px;
+    color: #00796b;
+    font-size: 26px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #e6e6e6;
+    display: inline-block;
+}
+
+/* Style pour le formulaire d'inscription */
+form {
+    width: 320px;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f1f2d9;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+p.login-paragraph {
+    text-align: center;
+    font-size: 16px;
+    color: #e9e0e0; /* Couleur plus foncée pour une meilleure lisibilité */
+    padding: 15px; /* Ajouter un rembourrage pour créer de l'espace autour du texte */
+    background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan légèrement transparent pour le contraste */
+    border-radius: 4px; /* Bords arrondis pour l'esthétique */
+    display: inline-block; /* Pour appliquer le padding et border-radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre portée légère pour la profondeur */
+    margin: auto; /* Centrer le paragraphe si nécessaire */
+}
+
+a.register-link {
+    color: #ffffff; /* Couleur blanche pour un bon contraste */
+    background-color: rgba(0, 121, 107, 0.8); /* Couleur semi-transparente pour le fond */
+    padding: 8px 12px; /* Rembourrage pour rendre le lien plus grand et facile à cliquer */
+    border-radius: 4px; /* Bords arrondis pour l'esthétique */
+    box-shadow: 0 2px 4px rgba(234, 231, 231, 0.2); /* Ombre portée pour la profondeur */
+    text-decoration: none; /* Retirer le soulignement par défaut des liens */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition douce pour les interactions */
+}
+
+a.register-link:hover, a.register-link:focus {
+    background-color: rgba(0, 121, 107, 1); /* Couleur plus solide au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée pour l'effet au survol */
+    text-decoration: underline; /* Souligner le texte pour indiquer la possibilité de cliquer */
+}

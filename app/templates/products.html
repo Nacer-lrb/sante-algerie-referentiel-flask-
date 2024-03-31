@@ -1,0 +1,105 @@
+
+
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="product-header">
+    <h1>PRODUCT LIST</h1>
+</div>
+
+<form action="{{ url_for('product.product_list') }}" method="get" class="search-container">
+    <input type="text" placeholder="Search for products..." name="search_query">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+
+<div class="product-container">
+    {% for product in products %}
+    <div class="product-card" onclick="showDetails(this)">
+        <img src="{{ product.image_url }}" alt="{{ product.generic_name }}" class="product-image">
+        <div class="product-name">{{ product.product_name }} - {{ product.brands }} - {{ product.quantity }}</div>
+        <div class="product-scores">
+            <span class="nutri-score">A</span>
+            <span class="nova-score">1</span>
+            <span class="eco-score">B</span>
+        </div>
+        <!-- Les détails du produit sont initialement cachés -->
+        <div class="product-details" style="display:none;">
+            <div>Code-barres: {{ product.id }}</div>
+            <div>Energy: {{ product.energy }} kJ</div>
+            <div>Proteins: {{ product.proteins }} g</div>
+            <div>Fiber: {{ product.fiber }} g</div>
+            <div>Sugars: {{ product.sugars }} g</div>
+            <div>Saturated Fat: {{ product.saturated_fat }} g</div>
+            <div>Sodium: {{ product.sodium }} mg</div>
+            <!-- Ajoutez d'autres détails que vous souhaitez afficher ici -->
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- La Modale (background) -->
+<div id="myModal" class="modal-background">
+
+    <!-- Contenu de la modale -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- Le contenu de la modale sera injecté ici -->
+      <div id="modal-details"></div>
+    </div>
+  
+  </div>
+  
+  <script>
+    // Obtenez la modale
+    var modal = document.getElementById('myModal');
+    
+    // Obtenez l'élément <span> qui ferme la modale
+    var span = document.getElementsByClassName("close")[0];
+    
+    // Lorsque l'utilisateur clique sur une carte, ouvrez la modale
+    function showDetails(cardElement) {
+        // Récupérez l'image, le nom et les scores de la carte cliquée
+        var image = cardElement.querySelector('.product-image').outerHTML;
+        var name = cardElement.querySelector('.product-name').innerHTML;
+        var scores = cardElement.querySelector('.product-scores').innerHTML;
+        
+        // Construisez le contenu de la modale avec une nouvelle structure
+        var modalContent = `
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    ${image}
+                </div>
+                <div class="modal-text-container">
+                    <h2>${name}</h2>
+                    <div class="modal-scores">${scores}</div>
+                    <div>${cardElement.querySelector('.product-details').innerHTML}</div>
+                </div>
+            </div>
+        `;
+        
+        // Injectez le contenu dans la modale
+        document.getElementById('modal-details').innerHTML = modalContent;
+        
+        // Montrez la modale
+        modal.style.display = "block";
+    }
+    
+    // Lorsque l'utilisateur clique sur <span> (x), fermez la modale
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // Lorsque l'utilisateur clique n'importe où en dehors de la modale, fermez-la
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+    
+{% endblock %}
+
+    
